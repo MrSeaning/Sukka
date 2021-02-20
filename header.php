@@ -42,7 +42,7 @@
 
             @media screen and (min-width:1280px) {
                 .main-col {
-                    width: 50%;
+                    width: 53%;
                 }
             }
         </style>

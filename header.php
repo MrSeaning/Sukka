@@ -62,7 +62,7 @@
                     <span>Mr.Seaning</span> </a></div>
             <div class="navbar-menu">
                 <div class="navbar-start">
-                    <a class="navbar-item" href="/">首页</a>
+                    <a class="navbar-item" href="<?php $this->options->siteUrl() ?>/blog/">首页</a>
                     <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
                     <?php while ($pages->next()) : ?>
                         <a class="navbar-item" href="<?php $pages->permalink(); ?>"><?php $pages->title(); ?></a>

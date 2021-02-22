@@ -1303,6 +1303,10 @@ tbody>tr:nth-child(odd) {
     min-width: 100%
 }
 
+.twikoo {
+    min-width: 100%;
+}
+
 .toc-li {
     margin: 0
 }

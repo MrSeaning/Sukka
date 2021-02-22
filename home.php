@@ -31,7 +31,7 @@
             color: #212529;
             font-size: 16px;
             line-height: 1.8;
-            font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Noto Sans CJK SC, Microsoft YaHei, WenQuanYi Micro Hei, WenQuanYi Zen Hei, Helvetica Neue, Arial, sans-serif;
+            font-family: 'Comic Sans MS','Consolas', Arial, sans-serif;
 
         }
 

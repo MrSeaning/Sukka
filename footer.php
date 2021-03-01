@@ -20,16 +20,54 @@
  <script src="<?php $this->options->themeUrl("assets/js/viewimage.min.js") ?>"></script>
  <script crossorigin="anonymous" integrity="sha384-ovn+ksX00EqrxlV2SLbvnb13K5244CZPrO3v08mAssOuQ1AgGVcEu4k44sdOJPJE" src="https://lib.baomitu.com/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
  <script src="<?php $this->options->themeUrl("assets/js/main.min.js") ?>"></script>
- <script>
-     $("img.thumb-img").lazyload({
+ <?php if ($this->is('post')) : ?>
+     <script>
+         //文章目录功能js实现
+         function AddLi(i) {
+             let oLi = document.createElement("li");
+             let a = document.createElement("a");
+             oLi.append(a);
+             a.href = "#" + i.innerText;
+             a.innerHTML = i.innerText;
+             a.className = "menu_a";
+             return oLi
+         }
+         let hs = document.querySelectorAll("#post h2,#post h3");
+         if (hs.length > 0) {
+             for (let i of hs) {
+                 i.id = i.innerText;
+                 if (i.tagName.toLocaleLowerCase() == "h2") {
+                     let oLi = AddLi(i); // 添加组装好的li标签
+                     oLi.className = "toc-li";
+                     document.querySelector("#catalog").append(oLi);
+                 } else {
+                     let li = document.querySelectorAll(".toc-li");
+                     // 首先在判断最后一个标签有没有ul标签
+                     let obj = li[li.length - 1].querySelectorAll("ul");
+                     if (obj.length) {
+                         // 就把ul标签取出来，然后把li标签放进去
+                         let obj_ul = document.querySelectorAll(".toc-ul")
+                         let oli = AddLi(i)
+                         obj_ul[obj_ul.length - 1].append(oli);
+                     } else {
+                         // 没有ul标签,创建一个ul标签
+                         let obj_ul = document.createElement("ul");
+                         obj_ul.className = "toc-ul";
+                         // 然后再ul标签中添加li标签
+                         let oLi = AddLi(i);
+                         obj_ul.append(oLi);
+                         // 把这个ul标签放道第一级最后一个li标签中
+                         let obj_li = document.querySelectorAll(".toc-li");
+                         obj_li[obj_li.length - 1].append(obj_ul);
+                     }
+                 }
+             }
+         } else {
+             $("#toc").hide(); //没有目录 因此边栏
+         }
+     </script>
+ <?php endif; ?>
 
-         // placeholder,值为某一图片路径.此图片用来占据将要加载的图片的位置,待图片加载时,占位图则会隐藏
-         effect: "fadeIn", // 载入使用何种效果
-         // effect(特效),值有show(直接显示),fadeIn(淡入),slideDown(下拉)等,常用fadeIn
-         threshold: 200 // 提前开始加载
-
-     });
- </script>
  </body>
 
  </html>

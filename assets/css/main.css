@@ -304,6 +304,7 @@ h3 {
 }
 
 .fab {
+    display: none;
     position: fixed;
     bottom: var(--fab-position);
     right: var(--fab-position);

@@ -82,17 +82,7 @@ $this->need('header.php');
                 </div>
             </nav>
             <div class="c-card" id="comment">
-                <div id="tcomment"></div>
-                <script src="https://cdn.jsdelivr.net/npm/twikoo@1.2.0/dist/twikoo.all.min.js"></script>
-                <script>
-                    twikoo.init({
-                        envId: 'blogcomments-2ghjb6qi016dd097',
-                        el: '#tcomment',
-                        // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
-                        // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
-                    })
-                </script>
-                <!-- <div class="comment-loading">评论正在适配中，有事请联系作者邮箱 seaning at seaning dot com</div> -->
+				<div class="comment-loading">评论正在适配中，有事请联系作者邮箱 seaning at seaning dot com</div>
             </div>
         </main>
         <?php $this->need('sidebar.php'); ?>

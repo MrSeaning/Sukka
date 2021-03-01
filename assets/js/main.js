@@ -34,6 +34,14 @@
             //'exclude': '.exclude img',    //要排除的图片
             'delay': 300                //延迟时间
         });
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() >= 100) {
+                $('.fab').css('display', 'block').fadeIn(300);
+            } else {
+                $('.fab').css('display', 'none').fadeOut(300);
+            }
+        });
         //返回顶部
         $(".fab").on("click", function (event) {
             event.preventDefault();
@@ -45,10 +53,29 @@
             );
             return false;
         });
-    };
+        //目录平滑滚动
+        $("a.menu_a").click(function () {
+            $("html, body").animate({
+                scrollTop: $($(this).attr("href")).offset().top + "px"
+            }, {
+                duration: 500,
+                easing: "swing"
+            });
+            return false;
+        });
+        //图片懒加载
+        $("img.thumb-img").lazyload({
 
+            // placeholder,值为某一图片路径.此图片用来占据将要加载的图片的位置,待图片加载时,占位图则会隐藏
+            effect: "fadeIn", // 载入使用何种效果
+            // effect(特效),值有show(直接显示),fadeIn(淡入),slideDown(下拉)等,常用fadeIn
+            threshold: 200 // 提前开始加载
+
+        });
+    };
     $(function () {
         init();
+
     })
 })();
 

@@ -82,7 +82,7 @@ $this->need('header.php');
                 </div>
             </nav>
             <div class="c-card" id="comment">
-				<div class="comment-loading">评论正在适配中，有事请联系作者邮箱 seaning at seaning dot com</div>
+                <div class="comment-loading">评论正在适配中，有事请联系作者邮箱 seaning at seaning dot com</div>
             </div>
         </main>
         <?php $this->need('sidebar.php'); ?>

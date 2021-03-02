@@ -66,7 +66,6 @@
                     <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
                     <?php while ($pages->next()) : ?>
                         <a class="navbar-item" href="<?php $pages->permalink(); ?>"><?php $pages->title(); ?></a>
-
                     <?php endwhile; ?>
                 </div>
                 <div class="navbar-end">

@@ -23,21 +23,18 @@
  <?php if ($this->is('post')) : ?>
      <script>
          //文章目录功能js实现
-         function AddLi(i) {
-             let oLi = document.createElement("li");
-             let a = document.createElement("a");
-             oLi.append(a);
-             a.href = "#" + i.innerText;
-             a.innerHTML = i.innerText;
-             a.className = "menu_a";
-             return oLi
-         }
          let hs = document.querySelectorAll("#post h2,#post h3");
          if (hs.length > 0) {
              for (let i of hs) {
                  i.id = i.innerText;
                  if (i.tagName.toLocaleLowerCase() == "h2") {
-                     let oLi = AddLi(i); // 添加组装好的li标签
+                     // 添加组装好的li标签
+                     let oLi = document.createElement("li");
+                     let a = document.createElement("a");
+                     oLi.append(a);
+                     a.href = "#" + i.innerText;
+                     a.innerHTML = i.innerText;
+                     a.className = "menu_a";
                      oLi.className = "toc-li";
                      document.querySelector("#catalog").append(oLi);
                  } else {
@@ -54,7 +51,12 @@
                          let obj_ul = document.createElement("ul");
                          obj_ul.className = "toc-ul";
                          // 然后再ul标签中添加li标签
-                         let oLi = AddLi(i);
+                         let oLi = document.createElement("li");
+                         let a = document.createElement("a");
+                         oLi.append(a);
+                         a.href = "#" + i.innerText;
+                         a.innerHTML = i.innerText;
+                         a.className = "menu_a";
                          obj_ul.append(oLi);
                          // 把这个ul标签放道第一级最后一个li标签中
                          let obj_li = document.querySelectorAll(".toc-li");
@@ -63,7 +65,7 @@
                  }
              }
          } else {
-             $("#toc").hide(); //没有目录 因此边栏
+             $("#toc").hide(); //没有目录 隐藏边栏
          }
      </script>
  <?php endif; ?>

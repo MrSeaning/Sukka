@@ -2,15 +2,13 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');
 ?>
-
-
 <div class="container">
     <div class="cols">
         <main class="main-col">
             <article class="card">
                 <div class="card-image thumb-post">
 
-                    <img alt="<?php $this->title() ?>>" class="thumb-img" crossorigin="" src="<?php echo thumbside($this) ?>">
+                    <img alt="<?php $this->title() ?>>" class="thumb-img" crossorigin="" src="<?php $this->options->themeUrl("assets/img/lazyload.gif") ?>" data-original=" <?php echo thumbside($this) ?>">
 
                 </div>
                 <header class="post-header">
@@ -82,7 +80,8 @@ $this->need('header.php');
                 </div>
             </nav>
             <div class="c-card" id="comment">
-                <div class="comment-loading">评论正在适配中，有事请联系作者邮箱 seaning at seaning dot com</div>
+                <?php $this->need('comments.php') ?>
+                <!-- <div class="comment-loading">评论正在适配中，有事请联系作者邮箱 seaning at seaning dot com</div> -->
             </div>
         </main>
         <?php $this->need('sidebar.php'); ?>

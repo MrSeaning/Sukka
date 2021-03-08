@@ -4,6 +4,7 @@
   --main: #fff;
   --t: #37475b;
   --t-l: #6b7f94;
+  --fbcolor: #4c5161;
   --logo: #000;
   --link: #3273dc;
   --title: #475b6d;
@@ -35,6 +36,7 @@
   --titleAfter: #3c495b;
   --fab: #364151;
   --shadow: none;
+  --fbcolor: #252d38;
 }
 
 body,
@@ -251,11 +253,6 @@ table::-webkit-scrollbar-thumb {
   width: 50%;
   color: var(--link);
 }
-
-.footer {
-  display: none;
-}
-
 blockquote,
 figure,
 p,
@@ -505,7 +502,7 @@ h3 {
 @media screen and (min-width: 768px) {
   :root {
     --fab-position: 2rem;
-    --fab-padding: 1.35rem;
+    --fab-padding: 1.2rem;
     --toc-btn: none;
     --scroll-y: 0.5rem;
     --scroll-x: 0.35rem;
@@ -1354,6 +1351,15 @@ tbody > tr:nth-child(odd) {
   background-color: #3273dc;
 }
 
+.btn-comment {
+  color: #fff;
+  background-color: #3273dc;
+}
+.btn-comment:hover {
+  color: #fff;
+  background-color: #3273dc;
+}
+
 .btn-donation,
 .btn-donation:hover {
   color: #fff;
@@ -1468,10 +1474,11 @@ tbody > tr:nth-child(odd) {
   display: block;
   text-align: center;
   padding: 3rem 1.5rem;
-  background-color: #4c5161;
+  background-color: var(--fbcolor);
   box-shadow: var(--shadow);
   color: #fff;
   contain: content;
+  font-size: 0.8rem;
 }
 
 .footer-link {
@@ -1704,4 +1711,23 @@ tbody > tr:nth-child(odd) {
   .thumb-post {
     height: 11.88571rem;
   }
+}
+
+/*form*/
+.input,
+.textarea {
+  border-color: #eee;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  outline: none;
+}
+.input:focus,
+.textarea:focus {
+  border-color: #94b2fa !important;
+  box-shadow: 0 0 0 3px rgb(90 139 255 / 20%);
+}
+.textarea {
+  min-height: 100px;
+  height: auto;
+  line-height: 20px;
+  padding: 6px 10px;
 }

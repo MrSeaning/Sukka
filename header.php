@@ -25,6 +25,7 @@
     </title>
 
     <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/main.min.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('style.min.css'); ?>">
     <!--[if lt IE 9]>
     <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>

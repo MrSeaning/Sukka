@@ -36,7 +36,6 @@
 
 
         window.onscroll = function () {
-            console.log(document.documentElement.scrollTop)
             if (document.documentElement.scrollTop >= 100) {
                 document.querySelector(".fab").style.cssText = "display:block";
             } else

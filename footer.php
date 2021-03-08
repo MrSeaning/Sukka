@@ -16,9 +16,9 @@
  <!--Top-->
  <div class="fab"><a aria-label="回到顶部" class="fab-btn" href="#" title="top"><i id="i-up"></i></a></div>
 
- <script crossorigin="anonymous" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" src="https://lib.baomitu.com/jquery/3.5.1/jquery.min.js"></script>
+ <script crossorigin="anonymous" src="https://lib.baomitu.com/jquery/3.5.1/jquery.min.js"></script>
  <script src="<?php $this->options->themeUrl("assets/js/viewimage.min.js") ?>"></script>
- <script crossorigin="anonymous" integrity="sha384-ovn+ksX00EqrxlV2SLbvnb13K5244CZPrO3v08mAssOuQ1AgGVcEu4k44sdOJPJE" src="https://lib.baomitu.com/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+ <script crossorigin="anonymous" src="https://lib.baomitu.com/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
  <script src="<?php $this->options->themeUrl("assets/js/main.min.js") ?>"></script>
  <?php if ($this->is('post')) : ?>
      <script>

@@ -51,8 +51,10 @@ $this->need('header.php');
                         </div>
                         <div>转载或引用本文时请遵守许可协议，注明出处、不得用于商业用途！</div>
                     </div>
-                    <div id="article-expire">本文最后更新于 <span id="article-expire-day">20</span>
-                        天前，文中所描述的信息可能已发生改变</div>
+                    <?php if (timeZoneold($this->date->timeStamp)) : ?>
+                        <div id="article-expire">本文最后更新于 <span id="article-expire-day">30</span>
+                            天前，文中所描述的信息可能已发生改变</div>
+                    <?php endif ?>
                 </section>
                 <footer class="article-footer">
                     <?php $categories = $this->categories; ?>

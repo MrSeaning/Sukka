@@ -22,38 +22,41 @@ $this->need('header.php');
     <div class="cols">
         <main class="main-col">
 
+
+
             <?php while ($this->next()) : ?>
-                <div class="card">
-                    <a aria-label="缩略图" class="card-image thumb-index" href="<?php $this->permalink() ?>">
+                <?php if ($this->category != "say") : ?>
+                    <div class="card">
+                        <a aria-label="缩略图" class="card-image thumb-index" href="<?php $this->permalink() ?>">
 
-                        <img alt="<?php $this->title() ?>" src="<?php $this->options->themeUrl("assets/img/lazyload.jpg")
-                                                                ?>" class="thumb-img" data-original="<?php echo thumbside($this); ?>">
+                            <img alt="<?php $this->title() ?>" src="<?php $this->options->themeUrl("assets/img/lazyload.gif")
+                                                                    ?>" class="thumb-img" data-original="<?php echo thumbside($this); ?>">
 
-                    </a>
-                    <article class="card-content">
-                        <h1 class="post-title">
-                            <a class="post-title_a" href="<?php $this->permalink() ?>">
-                                <?php $this->title() ?>
-                            </a>
-                        </h1>
-                        <div class="mb3">
-                            <?php $this->excerpt(160, '...'); ?>
-                        </div>
-                        <div class="post-entry-footer">
-                            <div class="post-meta">
-                                <time datetime="<?php $this->date('c'); ?>"><?php $this->dateWord(); ?></time>
-                                <span class="dot"></span>
-                                <?php $categories = $this->categories; ?>
-                                <?php foreach ($categories as $cate) { ?>
-                                    <?php echo '<a class="post-meta_a" href="' . $cate['permalink'] . '">' . $cate['name'] . '</a>'; ?>
-                                <?php } ?>
-
+                        </a>
+                        <article class="card-content">
+                            <h1 class="post-title">
+                                <a class="post-title_a" href="<?php $this->permalink() ?>">
+                                    <?php $this->title() ?>
+                                </a>
+                            </h1>
+                            <div class="mb3">
+                                <?php $this->excerpt(160, '...'); ?>
                             </div>
-                            <a href="<?php $this->permalink() ?>">继续阅读</a>
-                        </div>
-                    </article>
-                </div>
+                            <div class="post-entry-footer">
+                                <div class="post-meta">
+                                    <time datetime="<?php $this->date('c'); ?>"><?php $this->dateWord(); ?></time>
+                                    <span class="dot"></span>
+                                    <?php $categories = $this->categories; ?>
+                                    <?php foreach ($categories as $cate) { ?>
+                                        <?php echo '<a class="post-meta_a" href="' . $cate['permalink'] . '">' . $cate['name'] . '</a>'; ?>
+                                    <?php } ?>
 
+                                </div>
+                                <a href="<?php $this->permalink() ?>">继续阅读</a>
+                            </div>
+                        </article>
+                    </div>
+                <?php endif ?>
             <?php endwhile; ?>
 
 

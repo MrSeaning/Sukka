@@ -38,8 +38,8 @@
         <?php if ($this->is('post')) : ?>
             <div class="c-card" id="toc">
                 <div class="card-label">文章目录</div>
-                <ul class="toc-ul">
-                    <li class="toc-li"><a class="menu_a" href="#一级目录">序言1</a></li>
+                <ul class="toc-ul" id="catalog">
+                    <!-- <li class="toc-li"><a class="menu_a" href="#一级目录">序言1</a></li>
                     <li class="toc-li"><a class="menu_a" href="#一级目录">一级目录</a>
                         <ul class="toc-ul">
                             <li class="toc-li"><a class="menu_a" href="#二级目录">二级目录</a></li>
@@ -59,7 +59,7 @@
 
                         </ul>
                     </li>
-                    <li class="toc-li"><a class="menu_a" href="#一级目录">一级目录</a></li>
+                    <li class="toc-li"><a class="menu_a" href="#一级目录">一级目录</a></li> -->
                 </ul>
             </div>
 
